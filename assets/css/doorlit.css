@@ -740,7 +740,7 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 14px;
   color: var(--ink-2);
 }
-.cost-box strong { display: block; color: var(--ink); font-size: 15px; margin-bottom: 6px; }
+.cost-box > strong:first-child { display: block; color: var(--ink); font-size: 15px; margin-bottom: 8px; }
 
 /* FAQ */
 .faq-list { max-width: 860px; display: flex; flex-direction: column; gap: 12px; }
