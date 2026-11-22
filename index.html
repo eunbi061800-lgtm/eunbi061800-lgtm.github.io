@@ -161,6 +161,7 @@
             <li><strong>오픈 후 3개월 단순 수정 무료</strong></li>
           </ul>
           <a class="btn btn-outline" href="https://open.kakao.com/o/sUJMxbYi" target="_blank" rel="noopener">STANDARD 카톡 상담</a>
+          <a class="btn btn-outline" href="#portfolio" data-jump-filter="onepage" style="margin-top:8px;width:100%;font-size:13px;padding:10px 14px">1P 포트폴리오 보기 ↓</a>
         </article>
 
         <!-- DELUXE BEST -->
@@ -181,6 +182,7 @@
             <li><strong>오픈 후 3개월 단순 수정 무료</strong></li>
           </ul>
           <a class="btn btn-kakao" href="https://open.kakao.com/o/sUJMxbYi" target="_blank" rel="noopener">DELUXE 카톡 상담 →</a>
+          <a class="btn btn-outline" href="#portfolio" data-jump-filter="multipage" style="margin-top:8px;width:100%;font-size:13px;padding:10px 14px">5P 포트폴리오 보기 ↓</a>
         </article>
 
         <!-- PREMIUM -->
@@ -200,6 +202,7 @@
             <li><strong>오픈 후 3개월 단순 수정 무료</strong></li>
           </ul>
           <a class="btn btn-outline" href="https://open.kakao.com/o/sUJMxbYi" target="_blank" rel="noopener">PREMIUM 카톡 상담</a>
+          <a class="btn btn-outline" href="#portfolio" data-jump-filter="premium" style="margin-top:8px;width:100%;font-size:13px;padding:10px 14px">10P 포트폴리오 보기 ↓</a>
         </article>
       </div>
 
@@ -236,9 +239,10 @@
       </div>
 
       <div class="filter-row" role="tablist" aria-label="포트폴리오 필터">
-        <button class="filter-btn active" type="button" data-filter="all">전체 6종</button>
+        <button class="filter-btn active" type="button" data-filter="all">전체 보기</button>
         <button class="filter-btn" type="button" data-filter="onepage">원페이지 (1P)</button>
         <button class="filter-btn" type="button" data-filter="multipage">멀티페이지 (5P)</button>
+        <button class="filter-btn" type="button" data-filter="premium">프리미엄 (10P)</button>
       </div>
 
       <div class="work-grid">
@@ -754,19 +758,23 @@
     });
   });
 
-  // Portfolio Filter
+  // Portfolio Filter & Pricing Jump Link
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.work-card');
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const f = btn.dataset.filter;
-      cards.forEach(card => {
-        const show = f === 'all' || card.dataset.category === f;
-        card.classList.toggle('hidden', !show);
-      });
+  function applyPortfolioFilter(f) {
+    const hasMatch = f === 'all' || Array.from(cards).some(c => c.dataset.category === f);
+    const targetFilter = hasMatch ? f : 'all';
+    filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === targetFilter));
+    cards.forEach(card => {
+      const show = targetFilter === 'all' || card.dataset.category === targetFilter;
+      card.classList.toggle('hidden', !show);
     });
+  }
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => applyPortfolioFilter(btn.dataset.filter));
+  });
+  document.querySelectorAll('[data-jump-filter]').forEach(link => {
+    link.addEventListener('click', () => applyPortfolioFilter(link.dataset.jumpFilter));
   });
 
   // FAQ Accordion
