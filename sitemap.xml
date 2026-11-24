@@ -145,6 +145,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://doorlit.kr/portfolio/clinic/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://doorlit.kr/portfolio/clinic/doctors.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://doorlit.kr/portfolio/clinic/programs.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://doorlit.kr/portfolio/clinic/reviews.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://doorlit.kr/portfolio/clinic/booking.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://doorlit.kr/portfolio/tax-advisory/</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
