@@ -888,6 +888,27 @@ section[id] { scroll-margin-top: 84px; }
   white-space: nowrap;
 }
 
+/* Pricing · MINI (초간단 1섹션) */
+.price-card.mini {
+  grid-column: 1 / -1;
+  background: linear-gradient(180deg, #fbfaf7 0%, #f6f3ec 100%);
+  border: 1.5px dashed #d6cec1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 24px 26px;
+}
+.price-card.mini .price-amount { margin-bottom: 4px; }
+.price-card.mini .price-desc { margin-bottom: 0; }
+.mini-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.mini-actions .btn { width: auto; }
+@media (min-width: 760px) {
+  .price-card.mini { grid-template-columns: 1fr auto; gap: 26px; }
+  .mini-actions { flex-direction: column; min-width: 210px; }
+  .mini-actions .btn { width: 100%; }
+}
+
 /* FAQ */
 .faq-list { max-width: 860px; display: flex; flex-direction: column; gap: 12px; }
 .faq-item {
