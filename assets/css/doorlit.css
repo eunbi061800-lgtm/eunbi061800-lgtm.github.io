@@ -990,6 +990,17 @@ section[id] { scroll-margin-top: 84px; }
   align-items: center;
 }
 .footer-links { display: flex; flex-wrap: wrap; gap: 18px; font-weight: 600; color: var(--ink-2); }
+.footer-biz {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin-top: 18px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+.footer-biz span { white-space: nowrap; }
+.footer-biz strong { font-weight: 700; color: var(--ink-2); }
 
 /* Floating Samples Button (always visible on right) */
 .floating-samples {
